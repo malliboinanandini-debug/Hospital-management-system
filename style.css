@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #333;
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+/* Main container */
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 25px auto;
+}
+
+/* Dashboard */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-left: 6px solid #0077b6;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card.critical {
+    border-left-color: #e63946;
+}
+
+.card.serious {
+    border-left-color: #ff9f1c;
+}
+
+.card.normal {
+    border-left-color: #2a9d8f;
+}
+
+/* Form */
+
+.form-section,
+.search-section,
+.queue-section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.form-section h2,
+.search-section h2,
+.queue-section h2 {
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+#patientForm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input,
+select {
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #0077b6;
+}
+
+/* Buttons */
+
+button {
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #005f8a;
+}
+
+#patientForm button {
+    align-self: end;
+}
+
+/* Search */
+
+#search {
+    width: 100%;
+}
+
+/* Queue */
+
+.queue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background: #0077b6;
+    color: white;
+    padding: 13px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover {
+    background: #f1f8ff;
+}
+
+/* Priority badges */
+
+.badge {
+    padding: 6px 10px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.critical-badge {
+    background: #e63946;
+}
+
+.serious-badge {
+    background: #ff9f1c;
+}
+
+.moderate-badge {
+    background: #2a9d8f;
+}
+
+.minor-badge {
+    background: #6c757d;
+}
+
+/* Status */
+
+.status {
+    font-weight: bold;
+}
+
+.waiting {
+    color: #ff9f1c;
+}
+
+.treating {
+    color: #0077b6;
+}
+
+.completed {
+    color: #2a9d8f;
+}
+
+/* Footer */
+
+footer {
+    background: #023e8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #patientForm {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    #patientForm {
+        grid-template-columns: 1fr;
+    }
+
+    .queue-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
